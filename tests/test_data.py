@@ -1,4 +1,5 @@
 """Kiểm thử E1: dữ liệu nạp vào phải khớp đặc tả đề DA-04."""
+import hashlib
 from pathlib import Path
 
 import numpy as np
@@ -8,6 +9,8 @@ from data.nap import (CATEGORICAL_COLS, FEATURE_COLS, LABEL_COL,
                       NUMERIC_COLS, load_ckd)
 
 DATA = Path("data/raw/kidney_disease.csv")
+# SHA-256 của file Kaggle đã kiểm kê ở E1 (results/csv/inventory_summary.json)
+SHA256_CHUAN = "835c57ec100db2d3751165fae615fec425caf444cca23bab6a853d4c08bf5556"
 pytestmark = pytest.mark.skipif(not DATA.exists(), reason="Chưa có file dữ liệu thật")
 
 
@@ -38,3 +41,11 @@ def test_khong_con_token_ban(df):
         vals = df[c].dropna()
         assert not vals.isin(["?", ""]).any()
         assert not vals.str.contains(r"^\s|\s$", regex=True).any()
+
+
+def test_dung_file_du_lieu():
+    ma = hashlib.sha256(DATA.read_bytes()).hexdigest()
+    assert ma == SHA256_CHUAN, (
+        "File data/raw/kidney_disease.csv khác bản nhóm đã kiểm kê ở E1. "
+        "Tải lại đúng file Kaggle akshayksingh/kidney-disease-dataset."
+    )
