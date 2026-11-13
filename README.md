@@ -36,6 +36,7 @@
 | Báo cáo | 15–25 trang PDF | Chưa bắt đầu |
 
 ## Dữ liệu
+Tải file từ Kaggle và đặt đúng đường dẫn data/raw/kidney_disease.csv. Thư mục này không đưa lên git theo quy định của tài liệu 07b.
 
 **Nguồn:** Rubini, L., Soundarapandian, P., & Eswaran, P. (2015). *Chronic Kidney Disease* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5G020 — giấy phép **CC BY 4.0**.
 File dùng trong dự án là bản CSV trên Kaggle: https://www.kaggle.com/datasets/akshayksingh/kidney-disease-dataset, lưu tại `data/raw/kidney_disease.csv`.
