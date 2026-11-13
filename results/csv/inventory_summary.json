@@ -1,0 +1,29 @@
+{
+  "source_file": "data/raw/kidney_disease.csv",
+  "source_sha256": "835c57ec100db2d3751165fae615fec425caf444cca23bab6a853d4c08bf5556",
+  "rows": 400,
+  "features": 24,
+  "numeric_features": 11,
+  "categorical_features": 13,
+  "missing_cells": 1012,
+  "missing_percentage": 10.5417,
+  "rows_with_any_missing": 242,
+  "complete_rows": 158,
+  "duplicates": 0,
+  "classes": {
+    "ckd": 250,
+    "notckd": 150
+  },
+  "top_5_missing_features": {
+    "rbc": 152,
+    "rc": 131,
+    "wc": 106,
+    "pot": 88,
+    "sod": 87
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1"
+  }
+}
